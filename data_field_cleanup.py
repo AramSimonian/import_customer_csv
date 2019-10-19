@@ -1,2 +1,2 @@
-def cleanup_business_field(business):
-    return str(business).title()
+def titlize_field(value):
+    return value.title()
