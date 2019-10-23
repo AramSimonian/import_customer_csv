@@ -33,3 +33,18 @@ def format_date_field(value):
     output = output.strftime('%d/%m/%Y')
 
     return output
+
+def format_number_field(value):
+    output = []
+    for val in value:
+        if val.isdigit():
+            output.append(val)
+
+    return "".join(output)
+
+def format_mobile_field(value):
+    output = ""
+    if value[:2] != "64":
+        output = "64"
+
+    return output + str(value)

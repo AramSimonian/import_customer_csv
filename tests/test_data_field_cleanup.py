@@ -61,3 +61,26 @@ def test_dob_field_import_invalid_day():
     with pytest.raises(Exception):
         dfc.format_date_field(input)
     
+def test_number_field_valid_string_all_nums():
+    input = "12345"
+    expected = "12345"
+    actual = dfc.format_number_field(input)
+    assert actual == expected
+
+def test_number_field_valid_string_some_nums():
+    input = "12-3 4.5"
+    expected = "12345"
+    actual = dfc.format_number_field(input)
+    assert actual == expected
+
+def test_mobile_field_no_leading_code():
+    input = "12345"
+    expected = "6412345"
+    actual = dfc.format_mobile_field(input)
+    assert actual == expected
+
+def test_mobile_field_has_leading_code():
+    input = "6412345"
+    expected = "6412345"
+    actual = dfc.format_mobile_field(input)
+    assert actual == expected
