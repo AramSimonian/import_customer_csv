@@ -84,3 +84,15 @@ def test_mobile_field_has_leading_code():
     expected = "6412345"
     actual = dfc.format_mobile_field(input)
     assert actual == expected
+
+def test_landline_field_no_leading_code():
+    input = "12345"
+    expected = "0912345"
+    actual = dfc.format_landline_field(input)
+    assert actual == expected
+
+def test_landline_field_has_leading_code():
+    input = "0912345"
+    expected = "0912345"
+    actual = dfc.format_landline_field(input)
+    assert actual == expected

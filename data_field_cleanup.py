@@ -43,8 +43,17 @@ def format_number_field(value):
     return "".join(output)
 
 def format_mobile_field(value):
+    # Pretty basic check - may need to check length?
     output = ""
     if value[:2] != "64":
         output = "64"
+
+    return output + str(value)
+
+def format_landline_field(value):
+    # Pretty basic check - may need to check length?
+    output = ""
+    if value[:2] != "09":
+        output = "09"
 
     return output + str(value)
